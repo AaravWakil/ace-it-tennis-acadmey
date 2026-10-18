@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="ACE IT Tennis Academy. Develop your game, sharpen your
+          instincts, and play with purpose. Explore tennis coaching programs.">
+
+    <title>ACE IT — Tennis Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #10120f;
+            --surface: #191c17;
+            --surface-light: #23271f;
+            --lime: #d5ff45;
+            --white: #f5f5ef;
+            --muted: #a3a69b;
+            --border: rgba(255,255,255,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+        .eyebrow {
+            color: var(--lime);
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 0.98;
+            text-transform: uppercase;
+            margin: 14px 0 20px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 520px;
+            font-size: 14px;
+        }
+
+        .accent {
+            color: var(--lime);
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            background: rgba(16,18,15,0.96);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 33px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--lime);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 12px;
+            color: #d0d2c9;
+        }
+
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            background: var(--lime);
+            color: #10120f;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            border: 1px solid var(--lime);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: transparent;
+            color: var(--lime);
+        }
+
+        .button-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--border);
+        }
+
+        .button-outline:hover {
+            border-color: var(--lime);
+            color: var(--lime);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 660px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(10,12,9,0.97) 0%,
+                    rgba(10,12,9,0.85) 43%,
+                    rgba(10,12,9,0.22) 100%
+                ),
+                url("https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=2000&q=85")
+                center 45% / cover no-repeat;
+        }
+
+        .hero-content {
+            padding: 95px 0;
+            max-width: 730px;
+        }
+
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(75px, 12vw, 145px);
+            font-weight: 900;
+            line-height: 0.78;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            margin: 30px 0;
+        }
+
+        .hero h1 span {
+            color: var(--lime);
+        }
+
+        .hero p {
+            max-width: 420px;
+            color: #d0d2c9;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-note {
+            margin-top: 50px;
+            color: #c5c8bc;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* VALUES STRIP */
+
+        .ticker {
+            background: var(--lime);
+            color: #10120f;
+            padding: 17px 0;
+            overflow: hidden;
+        }
+
+        .ticker-inner {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 14px 25px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            height: 480px;
+        }
+
+        .image-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 12px 17px;
+            background: var(--lime);
+            color: #10120f;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-copy p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .about-points {
+            margin-top: 28px;
+            border-top: 1px solid var(--border);
+        }
+
+        .about-point {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .about-point span:last-child {
+            color: var(--lime);
+        }
+
+        /* PROGRAMS */
+
+        .programs {
+            background: #171a15;
+        }
+
+        .program-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 45px;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .program-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--lime);
+        }
+
+        .program-card img {
+            height: 230px;
+        }
+
+        .program-body {
+            padding: 25px;
+        }
+
+        .program-number {
+            color: var(--lime);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .program-body h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 29px;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        .program-body p {
+            color: var(--muted);
+            font-size: 13px;
+            min-height: 62px;
+        }
+
+        .text-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--lime);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* PHILOSOPHY */
+
+        .philosophy {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 420px;
+        }
+
+        .philosophy-image {
+            min-height: 420px;
+            background:
+                url("https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=85")
+                center / cover;
+        }
+
+        .philosophy-copy {
+            background: var(--lime);
+            color: #10120f;
+            padding: 75px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .philosophy-copy .eyebrow {
+            color: #343b1e;
+        }
+
+        .philosophy-copy h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(43px, 5vw, 67px);
+            line-height: 0.98;
+            text-transform: uppercase;
+            margin: 18px 0;
+        }
+
+        .philosophy-copy p {
+            font-size: 14px;
+            max-width: 440px;
+        }
+
+        /* COACHING APPROACH */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-top: 45px;
+        }
+
+        .approach-card {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+        }
+
+        .approach-card .number {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--lime);
+        }
+
+        .approach-card h3 {
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        .approach-card p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* CTA */
+
+        .cta {
+            background:
+                linear-gradient(rgba(10,12,9,0.85), rgba(10,12,9,0.91)),
+                url("https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 0.95;
+            text-transform: uppercase;
+            margin: 18px 0;
+        }
+
+        .cta p {
+            color: #d0d2c9;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        /* ENQUIRY */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+        }
+
+        .contact-info p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form select {
+            width: 100%;
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus {
+            border-color: var(--lime);
+        }
+
+        .contact-form select option {
+            background: var(--surface);
+        }
+
+        .form-message {
+            padding: 12px;
+            background: var(--surface-light);
+            color: var(--lime);
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-copy {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .footer-tag {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--lime);
+            text-transform: uppercase;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a:nth-child(2),
+            .nav-links a:nth-child(3) {
+                display: none;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .program-header {
+                align-items: start;
+                flex-direction: column;
+            }
+
+            .about-image img {
+                height: 370px;
+            }
+
+            .philosophy {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-image {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .section {
+                padding: 70px 0;
+            }
+
+            nav {
+                height: 70px;
+            }
+
+            .logo {
+                font-size: 29px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a:first-child {
+                display: none;
+            }
+
+            .nav-links .button {
+                padding: 10px 12px;
+                font-size: 9px;
+            }
+
+            .hero {
+                min-height: 600px;
+                background-position: 58% center;
+            }
+
+            .hero h1 {
+                font-size: clamp(68px, 17vw, 95px);
+                letter-spacing: -2px;
+            }
+
+            .hero-content {
+                padding: 75px 0;
+            }
+
+            .program-grid,
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-card img {
+                height: 230px;
+            }
+
+            .program-body p {
+                min-height: auto;
+            }
+
+            .ticker-inner {
+                font-size: 16px;
+            }
+
+            .philosophy-copy {
+                padding: 60px 8%;
+            }
+
+            .cta {
+                padding: 75px 20px;
+            }
+
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="container nav-inner">
+
+            <a href="#home" class="logo">
+                ACE<span>IT.</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#programs">Programs</a>
+                <a href="#approach">Our Approach</a>
+
+                <a href="#contact" class="button">
+                    Join The Academy ↗
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero" id="home">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    Tennis Academy · Built Around Your Game
+                </div>
+
+                <h1>
+                    PLAY<br>
+                    WITH<br>
+                    <span>PURPOSE.</span>
+                </h1>
+
+                <p>
+                    More than just learning to play.
+                    Build your technique, sharpen your mindset,
+                    and discover what you're capable of on court.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#programs" class="button">
+                        Explore Programs ↗
+                    </a>
+
+                    <a href="#about" class="button button-outline">
+                        Discover ACE IT
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    Every point is an opportunity. Every session counts.
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- VALUES STRIP -->
+
+    <div class="ticker">
+        <div class="container ticker-inner">
+            <span>Technique.</span>
+            <span>★</span>
+            <span>Discipline.</span>
+            <span>★</span>
+            <span>Consistency.</span>
+            <span>★</span>
+            <span>Competition.</span>
+        </div>
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+        <div class="container about-grid">
+
+            <div class="about-image">
+                <img
+                    src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1100&q=85"
+                    alt="Tennis court ready for training"
+                    loading="lazy"
+                >
+
+                <div class="image-label">
+                    Built Through The Work
+                </div>
+            </div>
+
+            <div class="about-copy">
+
+                <div class="eyebrow">The ACE IT Philosophy</div>
+
+                <h2 class="section-heading">
+                    YOUR GAME.<br>
+                    YOUR <span class="accent">NEXT LEVEL.</span>
+                </h2>
+
+                <p>
+                    At ACE IT, we believe good tennis is built one
+                    session at a time. Every drill, every rally and
+                    every match is a chance to improve.
+                </p>
+
+                <p>
+                    Our approach combines technical development,
+                    movement, tactical awareness and mental discipline
+                    to help players build a stronger, more complete game.
+                </p>
+
+                <div class="about-points">
+                    <div class="about-point">
+                        <span>01 / Strong fundamentals</span>
+                        <span>↗</span>
+                    </div>
+
+                    <div class="about-point">
+                        <span>02 / Intelligent match play</span>
+                        <span>↗</span>
+                    </div>
+
+                    <div class="about-point">
+                        <span>03 / Consistent development</span>
+                        <span>↗</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROGRAMS -->
+
+    <section class="section programs" id="programs">
+        <div class="container">
+
+            <div class="program-header">
+
+                <div>
+                    <div class="eyebrow">Find Your Starting Point</div>
+
+                    <h2 class="section-heading">
+                        TRAIN FOR<br>
+                        <span class="accent">WHAT'S NEXT.</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Whether you're picking up a racket for the
+                        first time or preparing to compete, find a
+                        training pathway that fits your goals.
+                    </p>
+                </div>
+
+                <a href="#contact" class="button">
+                    Find Your Program ↗
+                </a>
+
+            </div>
+
+
+            <div class="program-grid">
+
+                <article class="program-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=850&q=80"
+                        alt="Tennis training on court"
+                        loading="lazy"
+                    >
+
+                    <div class="program-body">
+                        <div class="program-number">PROGRAM 01</div>
+
+                        <h3>Foundation</h3>
+
+                        <p>
+                            Learn the fundamentals, develop coordination,
+                            and build confidence with the racket.
+                        </p>
+
+                        <a href="#contact" class="text-link">
+                            Start Here ↗
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="program-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=850&q=80"
+                        alt="Tennis court and training environment"
+                        loading="lazy"
+                    >
+
+                    <div class="program-body">
+                        <div class="program-number">PROGRAM 02</div>
+
+                        <h3>Performance</h3>
+
+                        <p>
+                            Improve footwork, shot consistency,
+                            tactical decisions and match confidence.
+                        </p>
+
+                        <a href="#contact" class="text-link">
+                            Level Up ↗
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="program-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=850&q=80"
+                        alt="Tennis player practising on court"
+                        loading="lazy"
+                    >
+
+                    <div class="program-body">
+                        <div class="program-number">PROGRAM 03</div>
+
+                        <h3>Competitive</h3>
+
+                        <p>
+                            Develop match strategy, point construction
+                            and the habits required for competitive tennis.
+                        </p>
+
+                        <a href="#contact" class="text-link">
+                            Train To Compete ↗
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PHILOSOPHY -->
+
+    <section class="philosophy">
+
+        <div
+            class="philosophy-image"
+            role="img"
+            aria-label="Tennis court"
+        ></div>
+
+        <div class="philosophy-copy">
+
+            <div class="eyebrow">The Mindset</div>
+
+            <h2>
+                TALENT<br>
+                STARTS IT.<br>
+                <span>DISCIPLINE</span><br>
+                BUILDS IT.
+            </h2>
+
+            <p>
+                Progress isn't always dramatic. Sometimes it's
+                one better decision, one cleaner shot, or one
+                more focused session. That's where the difference
+                is made.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- APPROACH -->
+
+    <section class="section" id="approach">
+        <div class="container">
+
+            <div class="eyebrow">How We Develop Players</div>
+
+            <h2 class="section-heading">
+                BUILT ON THE<br>
+                <span class="accent">RIGHT THINGS.</span>
+            </h2>
+
+            <p class="section-description">
+                Training with purpose means understanding not
+                just what you're practising, but why.
+            </p>
+
+            <div class="approach-grid">
+
+                <article class="approach-card">
+                    <div class="number">01</div>
+
+                    <h3>Technical Precision</h3>
+
+                    <p>
+                        Build reliable strokes, sound movement
+                        patterns and consistent fundamentals.
+                    </p>
+                </article>
+
+                <article class="approach-card">
+                    <div class="number">02</div>
+
+                    <h3>Tactical Intelligence</h3>
+
+                    <p>
+                        Learn to construct points, recognise
+                        opportunities and make smarter decisions.
+                    </p>
+                </article>
+
+                <article class="approach-card">
+                    <div class="number">03</div>
+
+                    <h3>Mental Discipline</h3>
+
+                    <p>
+                        Develop concentration, composure and
+                        the ability to learn from every match.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+
+    <section class="cta">
+
+        <div class="eyebrow">Your Next Chapter Starts Here</div>
+
+        <h2>
+            READY TO<br>
+            <span class="accent">ACE IT?</span>
+        </h2>
+
+        <p>
+            Start with a conversation. Find the right training
+            pathway for your game.
+        </p>
+
+        <a href="#contact" class="button">
+            Enquire About Training ↗
+        </a>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="section" id="contact">
+        <div class="container contact-grid">
+
+            <div class="contact-info">
+
+                <div class="eyebrow">Take The First Step</div>
+
+                <h2 class="section-heading">
+                    LET'S TALK<br>
+                    <span class="accent">TENNIS.</span>
+                </h2>
+
+                <p>
+                    Tell us a little about yourself and the kind
+                    of tennis training you're looking for.
+                </p>
+
+                <p>
+                    Complete the enquiry form and we'll have
+                    your details ready for follow-up.
+                </p>
+
+            </div>
+
+
+            <form class="contact-form" action="/enquire" method="POST">
+
+                {% if message %}
+                    <div class="form-message" role="status">
+                        {{ message }}
+                    </div>
+                {% endif %}
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your full name"
+                    aria-label="Your full name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Your phone number"
+                    aria-label="Your phone number"
+                    required
+                >
+
+                <select name="program" aria-label="Select a program" required>
+                    <option value="">Select your training program</option>
+                    <option value="Foundation">Foundation</option>
+                    <option value="Performance">Performance</option>
+                    <option value="Competitive">Competitive</option>
+                </select>
+
+                <button type="submit" class="button">
+                    Submit Enquiry ↗
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-inner">
+
+            <a href="#home" class="logo">
+                ACE<span>IT.</span>
+            </a>
+
+            <div class="footer-copy">
+                © 2026 ACE IT Tennis Academy. All rights reserved.
+            </div>
+
+            <div class="footer-tag">
+                Play With Purpose.
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
