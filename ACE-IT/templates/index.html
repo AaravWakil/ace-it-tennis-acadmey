@@ -1039,8 +1039,7 @@
             </div>
 
 
-            <form class="contact-form" action="/enquire" method="POST">
-
+            <form class="contact-form" id="contactForm">
                 {% if message %}
                     <div class="form-message" role="status">
                         {{ message }}
@@ -1099,6 +1098,37 @@
 
         </div>
     </footer>
+<script>
+    const form = document.getElementById("contactForm");
 
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = form.elements["name"].value.trim();
+        const phone = form.elements["phone"].value.trim();
+        const program = form.elements["program"].value;
+
+        if (!name || !phone || !program) {
+            alert("Please complete all fields.");
+            return;
+        }
+
+        // Replace with your WhatsApp number, including country code.
+        // India example: 91 followed by your 10-digit number.
+        const whatsappNumber = "91XXXXXXXXXX";
+
+        const message =
+            "New ACE IT Tennis Academy Enquiry\n\n" +
+            "Name: " + name + "\n" +
+            "Phone: " + phone + "\n" +
+            "Program: " + program;
+
+        const whatsappURL =
+            "https://wa.me/" + whatsappNumber +
+            "?text=" + encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+    });
+</script>
 </body>
 </html>
